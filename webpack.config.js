@@ -4,11 +4,24 @@ const path = require("path"); // pathモジュールをインポート
 
 module.exports = {
   // エントリー
-  entry: "./dist/main.js",
+  entry: "./src/food-app/main.ts",
   // 出力に関して記載する
   output: {
     filename: "bundle.js",
     // path: __dirname,
     path: path.resolve(__dirname, "dist"), // -> /Users/kanno/workspace/section9-setup/dist
+  },
+  devtool: "inline-source-map",
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
   },
 };
