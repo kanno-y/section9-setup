@@ -8,8 +8,8 @@ module.exports = {
   // 出力に関して記載する
   output: {
     filename: "bundle.js",
-    // path: __dirname,
     path: path.resolve(__dirname, "dist"), // -> /Users/kanno/workspace/section9-setup/dist
+    publicPath: "/dist/",
   },
   devtool: "inline-source-map",
   module: {
@@ -24,4 +24,5 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js"],
   },
+  mode: "development",
 };
